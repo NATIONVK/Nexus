@@ -105,6 +105,13 @@ A phase is complete only when:
 6. Documentation and repository state are updated.
 7. The user is given an honest summary of what is implemented and what remains.
 
-## Current status
+## Phase 1 status — in progress
 
-**Phase 0 / repository bootstrap exists. The 50-phase master roadmap is defined; Phase 1 implementation has not yet started.** Verify the current repository and workflow before resuming work in a new chat.
+- [x] Inspect current NEXUS repository and latest CI result.
+- [x] Compare Android engine workflows and document a provisional Godot 4.7.x + GDScript + Mobile renderer baseline.
+- [ ] Confirm the actual Android device model, SoC/GPU, and RAM.
+- [ ] Create the separate HACKER PROTOCOL game repository.
+- [ ] Build and install a minimal Godot Android vertical slice on the target device.
+- [ ] Validate touch input, one test environment, one rigged human character, frame rate, memory, thermals, and CI export.
+
+**Phase 0 / NEXUS repository bootstrap is complete. Phase 1 is in progress; no 3D game runtime or human character assets have been implemented yet.**
