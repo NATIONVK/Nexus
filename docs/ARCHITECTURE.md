@@ -85,3 +85,32 @@ This is the current early NEXUS foundation, not the final 3D runtime. The separa
 ## Architecture change policy
 
 Record engine choices, API contracts, asset formats, minimum Android device tiers, performance budgets, and cross-repository integration decisions in version-controlled docs before implementing dependent phases.
+
+
+## Polyglot language strategy — HACKER PROTOCOL
+
+The project owner has explicitly requested a minimum of 5–7 programming languages. The target language set is seven, with each language restricted to a clear responsibility. This is a capability plan, not a requirement to put every language in every build.
+
+| Language | Intended responsibility | Adoption rule |
+|---|---|---|
+| **GDScript** | Core Godot gameplay: player controller, camera, missions, UI flow, world interactions, NPC behaviour prototypes | Primary game scripting language from the first playable slice |
+| **C++** | Godot GDExtension/native modules for measured CPU-heavy simulation, custom engine integration, or platform-specific performance work | Add only after profiling proves GDScript/engine APIs are insufficient |
+| **Kotlin** | Android-native bridge: lifecycle, notifications, billing, permissions, background download integration, device services | Add as small Android plugin modules when a real Android feature needs native access |
+| **Java** | Compatibility layer for third-party Android SDKs or libraries that expose Java APIs and cannot be cleanly consumed through Kotlin bindings | Use only when a dependency requires it; do not duplicate Kotlin modules |
+| **TypeScript** | NEXUS web dashboard, developer/admin tools, typed API clients, and browser-based companion experiences | Use for web-facing code and gradually typed service boundaries |
+| **Python** | AI orchestration experiments, content/asset processing, NPC dialogue evaluation, dataset preparation, build and QA automation | Keep production secrets server-side; do not ship Python runtime in the Android game client |
+| **Rust** | Optional high-performance authoritative services or security-sensitive networking components, such as multiplayer session services | Introduce only when multiplayer scale, profiling, or security review justifies a separate service |
+
+**Supporting data language:** SQL is used for relational queries and migrations, but is not counted among the seven primary programming languages.
+
+### Polyglot engineering rules
+
+- GDScript remains the default for game logic; avoid splitting ordinary gameplay across multiple languages.
+- Use stable, versioned interfaces between the Godot client, Android plugins, NEXUS services, and multiplayer services (JSON/HTTP for control APIs; a documented binary protocol only when justified).
+- Never expose AI provider keys, database credentials, signing keys, or privileged service secrets in the game client.
+- Keep Kotlin and Java native code behind a narrow Android plugin boundary; keep C++ behind GDExtension/native interfaces.
+- Rust services must have documented API contracts, authentication, rate limits, observability, and deployment ownership before production use.
+- TypeScript and Python services must not become competing sources of truth for the same business logic.
+- Add each language incrementally with tests, lint/format rules, dependency pinning, and a short docs guide. Do not add empty placeholder modules just to claim a language is present.
+- The Android-only development constraint remains important: choose workflows that can be maintained from the owner's phone, and clearly identify any task that requires a remote build runner or desktop environment.
+- Language count is not a quality metric. Maintainability, Android compatibility, measured performance, security, and the ability to build/release are the acceptance criteria.
