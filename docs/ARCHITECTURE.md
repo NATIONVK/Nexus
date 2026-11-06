@@ -27,9 +27,13 @@ Large storage capacity does not remove runtime limits. The client must use:
 
 The earlier 200–500 MB target is superseded and must not be treated as a maximum.
 
-## 3D engine decision
+## Game engine direction
 
-The game engine is not yet finalized. Phase 1 must evaluate Android support, visual quality, asset pipeline, performance on target devices, licensing, tooling, and build automation before selecting it. Do not claim a photorealistic 3D engine or game runtime is already present in this repository.
+The provisional HACKER PROTOCOL baseline is **Godot 4.7.x stable + GDScript + Mobile renderer**, selected because the project owner currently develops from an Android phone and Godot provides an Android editor/export workflow.
+
+This is not yet a fully validated final engine decision. The Android editor is experimental and its UI is not touch-optimized; hardware keyboard/mouse are recommended. C# is not available in the Android editor. A device-tested vertical slice is required before Phase 1 can be completed.
+
+Unreal Engine remains a possible later alternative if a desktop/cloud workstation becomes available and measured visual-quality requirements cannot be met with the Godot prototype. See [ADR-001](decisions/ADR-001-android-game-engine.md).
 
 ## Lifelike character pipeline
 
@@ -53,14 +57,14 @@ World events and character actions should pass through explicit schemas. AI-driv
 
 Android (Capacitor wrapper) / Web Browser → React UI → HTTPS JSON API → Express Server → Provider Adapters (Gemini/OpenAI) and SQLite.
 
-This is the current early NEXUS foundation, not the final 3D runtime. The separate game client and shared-universe bridge remain future work.
+This is the current early NEXUS foundation, not the final 3D runtime. The separate Godot game client and shared-universe bridge remain future work.
 
 ## Current limitations
 
 - The initial SQLite store is suitable only for a single server instance and local development.
 - There is no authentication or per-user authorization yet; do not expose the initial API publicly with private user data.
 - The current chat endpoint is request/response rather than streaming.
-- No 3D game engine, 3D world, human character assets, NPC simulation, multiplayer runtime, or downloadable world-content pipeline is implemented yet.
+- No 3D game engine project, 3D world, human character assets, NPC simulation, multiplayer runtime, or downloadable world-content pipeline is implemented yet.
 - Neural memory, autonomous agents, voice, and browser automation are roadmap items until separately implemented and tested.
 
 ## Architecture change policy
