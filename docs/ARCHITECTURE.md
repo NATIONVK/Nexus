@@ -33,6 +33,21 @@ The provisional HACKER PROTOCOL baseline is **Godot 4.7.x stable + GDScript + Mo
 
 This is not yet a fully validated final engine decision. The Android editor is experimental and its UI is not touch-optimized; hardware keyboard/mouse are recommended. C# is not available in the Android editor. A device-tested vertical slice is required before Phase 1 can be completed.
 
+The vivo Y29 is the first named Android test device. Its Bangladesh 4G variant is listed with Snapdragon 685, Adreno 610, Android 15 at launch, 6/8 GB RAM options, and 1608×720 display. The owner's exact model code, physical RAM, storage variant, installed OS build, and actual graphics API/driver support still need on-device confirmation. See [device profile](VIVO-Y29-DEVICE-PROFILE.md).
+
+### Provisional Y29 graphics target (not yet benchmarked)
+
+- Stable 30 FPS target; do not target 120 FPS merely because the display supports it.
+- 1608×720 output with a dynamic 0.70–0.90 internal render-scale starting range.
+- Test Godot Mobile (Vulkan) and Compatibility (OpenGL) builds on the actual device; select based on driver support, stability, and measured performance.
+- Baked/static lighting for most environment surfaces, a small dynamic-light budget, limited real-time shadows, selective reflection probes, restrained post-processing.
+- Compressed textures with mipmaps; common props at 512 px–1K and hero-character maps up to 1K–2K only after memory profiling.
+- Mesh LODs, occlusion, instancing, streamed world cells, and distance-based unloading.
+- One detailed hero character in the first vertical slice; lower-cost NPC LODs later.
+- Sustained-session profiling for frame time, memory, thermal state, and battery drain.
+
+These values are starting engineering targets, not measured performance claims. A 10-minute sustained test district run targeting 30 FPS, with no crash/OOM or runaway memory growth, is a proposed acceptance gate. Full measurement requirements are in the device profile.
+
 Unreal Engine remains a possible later alternative if a desktop/cloud workstation becomes available and measured visual-quality requirements cannot be met with the Godot prototype. See [ADR-001](decisions/ADR-001-android-game-engine.md).
 
 ## Lifelike character pipeline
