@@ -7,7 +7,8 @@
 - **SoC:** Qualcomm Snapdragon 685.
 - **GPU:** Qualcomm Adreno 610.
 - **CPU:** Octa-core, 4 × up to 2.8 GHz + 4 × up to 1.9 GHz (official product specification).
-- **RAM configurations:** 6 GB or 8 GB LPDDR4X; the owner's actual physical RAM configuration is not yet confirmed.
+- **Owner-confirmed physical RAM:** 6 GB (confirmed by owner; do not add Extended RAM to this figure).
+- **RAM family/configurations:** LPDDR4X; official product configurations include 6 GB and 8 GB.
 - **Storage configurations:** 128 GB or 256 GB eMMC 5.1; owner's exact capacity is not yet confirmed.
 - **Display:** 1608 × 720, 120 Hz LCD.
 - **Battery:** 6500 mAh typical.
@@ -50,7 +51,8 @@ These are proposed acceptance targets for the prototype, not claims that the pho
 ## Information still needed from the owner
 
 - Exact model number / model code from Settings → About phone.
-- Physical RAM: 6 GB or 8 GB (do not count Extended RAM as physical RAM).
+- Internal storage variant and available free space.
+- Current Android version/build number.
 - Internal storage variant and available free space.
 - Current Android version/build number.
 - Whether the phone is Y29 4G (Snapdragon 685) or a differently named regional variant.
