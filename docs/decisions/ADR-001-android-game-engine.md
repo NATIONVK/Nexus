@@ -42,7 +42,7 @@ This is a practical workflow decision, not a claim that Godot automatically deli
 
 ## vivo Y29 test profile
 
-The owner identified the primary test device as vivo Y29. The Bangladesh official Y29 4G product listing specifies Snapdragon 685, Adreno 610, Android 15/Funtouch OS 15 at launch, 6 GB or 8 GB RAM configurations, eMMC 5.1 storage, and a 1608×720 120 Hz display. Exact physical RAM, model code, storage size, installed OS build, and GPU driver/API support remain unverified on the actual handset.
+The owner identified the primary test device as vivo Y29. The Bangladesh official Y29 4G product listing specifies Snapdragon 685, Adreno 610, Android 15/Funtouch OS 15 at launch, 6 GB or 8 GB RAM configurations, eMMC 5.1 storage, and a 1608×720 120 Hz display. The owner has confirmed 6 GB physical RAM (Extended RAM excluded). Exact model code, storage size, installed OS build, and GPU driver/API support remain unverified on the actual handset.
 
 Proposed initial graphics target:
 - Stable 30 FPS, not 120 FPS.
