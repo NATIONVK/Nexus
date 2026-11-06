@@ -109,9 +109,13 @@ A phase is complete only when:
 
 - [x] Inspect current NEXUS repository and latest CI result.
 - [x] Compare Android engine workflows and document a provisional Godot 4.7.x + GDScript + Mobile renderer baseline.
-- [ ] Confirm the actual Android device model, SoC/GPU, and RAM.
+- [x] Identify the primary test device as vivo Y29 (Bangladesh 4G variant assumed); Snapdragon 685 / Adreno 610 verified from official specifications.
+- [x] Define provisional graphics targets: 30 FPS, 720p output, dynamic 0.70–0.90 render scale, baked lighting, limited shadows, LOD, and streamed world cells.
+- [ ] Confirm exact model code, physical RAM (6 GB or 8 GB), storage variant, installed Android build, and actual Vulkan/OpenGL driver capabilities.
 - [ ] Create the separate HACKER PROTOCOL game repository.
-- [ ] Build and install a minimal Godot Android vertical slice on the target device.
-- [ ] Validate touch input, one test environment, one rigged human character, frame rate, memory, thermals, and CI export.
+- [ ] Build and install Mobile and Compatibility renderer test APKs on the target device.
+- [ ] Validate touch input, one test environment, one rigged human character, sustained frame rate, memory, thermals, and CI export.
+
+The proposed graphics values are engineering targets only; no on-device benchmark has passed yet.
 
 **Phase 0 / NEXUS repository bootstrap is complete. Phase 1 is in progress; no 3D game runtime or human character assets have been implemented yet.**
