@@ -40,20 +40,38 @@ Keep the NEXUS AI service as a separate React/Express system. The future Godot g
 
 This is a practical workflow decision, not a claim that Godot automatically delivers Unreal-level photorealism. Human assets, lighting, skin/hair materials, animation quality, and performance must be demonstrated in a vertical slice before the engine choice is considered validated.
 
+## vivo Y29 test profile
+
+The owner identified the primary test device as vivo Y29. The Bangladesh official Y29 4G product listing specifies Snapdragon 685, Adreno 610, Android 15/Funtouch OS 15 at launch, 6 GB or 8 GB RAM configurations, eMMC 5.1 storage, and a 1608×720 120 Hz display. Exact physical RAM, model code, storage size, installed OS build, and GPU driver/API support remain unverified on the actual handset.
+
+Proposed initial graphics target:
+- Stable 30 FPS, not 120 FPS.
+- 1608×720 output with dynamic 0.70–0.90 render-scale starting range.
+- Test Mobile (Vulkan) and Compatibility (OpenGL) builds on-device before locking renderer.
+- Baked lighting for most static world geometry, few dynamic lights, limited shadow casters, selective reflections, restrained post-processing.
+- Compressed textures/mipmaps, mesh LOD, occlusion, instancing, streamed world cells, and bounded caches.
+- One detailed hero character in the first vertical slice; lower-detail NPCs later.
+- Profile a sustained 10-minute test and record frame-time, memory, temperature/thermal state, and battery drain.
+
+These are proposed targets, not results. See [vivo Y29 device profile](../VIVO-Y29-DEVICE-PROFILE.md).
+
 ## Validation gates before locking the engine
 
-1. Create a minimal Godot Android project with GDScript and the Mobile renderer.
-2. Build and install a debug APK on the owner's actual Android device.
+1. Create a minimal Godot Android project with GDScript and test both Mobile and Compatibility renderers.
+2. Build and install debug APKs on the owner's actual vivo Y29.
 3. Verify touch controls, camera movement, one streamed test environment, and one rigged human character.
-4. Record device model, SoC/GPU, RAM, Android version, frame rate, memory use, thermals, and install size.
+4. Record exact model code, physical RAM, storage, Android build, graphics API/driver, frame-time percentiles, memory, thermals, and install size.
 5. Test low/medium/high quality profiles and verify graceful fallback.
 6. Confirm the project can be built reproducibly in CI or a documented Android workflow.
 7. Review visual quality against the intended human-character target.
 
-If the validation fails, compare alternatives again rather than silently accepting poor performance or claiming the engine is final.
+If validation fails, compare alternatives again rather than silently accepting poor performance or claiming the engine is final.
 
 ## Source references
 
+- [vivo Bangladesh — Y29 specifications](https://www.vivo.com/bd/products/param/y29)
+- [Godot system requirements](https://docs.godotengine.org/en/latest/about/system_requirements.html)
+- [Godot renderer overview](https://docs.godotengine.org/en/latest/tutorials/rendering/renderers.html)
 - [Godot Android download and editor notes](https://godotengine.org/download/android/)
 - [Godot Android export documentation](https://docs.godotengine.org/en/latest/tutorials/export/exporting_for_android.html)
 - [Unreal Engine Android Quick Start](https://dev.epicgames.com/documentation/unreal-engine/android-quick-start)
