@@ -28,14 +28,13 @@ The current codebase is an early foundation, not the completed 3D universe. The 
 
 ## Current stack foundation
 
-- Frontend: React + Vite
-- Backend: Node.js + Express
+- NEXUS frontend: React + Vite
+- NEXUS backend: Node.js + Express
 - Persistence: SQLite for initial local development
-- Android wrapper: Capacitor configuration
+- NEXUS Android wrapper: Capacitor configuration
 - AI providers: server-side Gemini and OpenAI adapters
+- **Provisional HACKER PROTOCOL game engine:** Godot 4.7.x stable, GDScript, Mobile renderer. See [ADR-001](docs/decisions/ADR-001-android-game-engine.md); this requires an on-device vertical-slice validation and is not yet a completed game runtime.
 - Quality: automated tests and GitHub Actions
-
-The 3D game engine and cross-repository runtime integration are Phase 1 technical-discovery decisions; do not assume they are already implemented.
 
 ## Local development
 
@@ -71,4 +70,4 @@ Build/sign the generated Android project using Android Studio and an Android SDK
 7. Require approval for consequential external or destructive agent actions.
 8. Document limitations and known issues honestly.
 
-See [the 50-phase roadmap](docs/ROADMAP.md), [architecture](docs/ARCHITECTURE.md), and [security model](docs/SECURITY.md).
+See [the 50-phase roadmap](docs/ROADMAP.md), [architecture](docs/ARCHITECTURE.md), [engine decision](docs/decisions/ADR-001-android-game-engine.md), and [security model](docs/SECURITY.md).
