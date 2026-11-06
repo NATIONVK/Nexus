@@ -33,7 +33,7 @@ The provisional HACKER PROTOCOL baseline is **Godot 4.7.x stable + GDScript + Mo
 
 This is not yet a fully validated final engine decision. The Android editor is experimental and its UI is not touch-optimized; hardware keyboard/mouse are recommended. C# is not available in the Android editor. A device-tested vertical slice is required before Phase 1 can be completed.
 
-The vivo Y29 is the first named Android test device. Its Bangladesh 4G variant is listed with Snapdragon 685, Adreno 610, Android 15 at launch, 6/8 GB RAM options, and 1608×720 display. The owner's exact model code, physical RAM, storage variant, installed OS build, and actual graphics API/driver support still need on-device confirmation. See [device profile](VIVO-Y29-DEVICE-PROFILE.md).
+The vivo Y29 is the first named Android test device. Its Bangladesh 4G variant is listed with Snapdragon 685, Adreno 610, Android 15 at launch, 6/8 GB RAM options, and 1608×720 display. The owner has confirmed 6 GB physical RAM (Extended RAM excluded). Exact model code, storage variant, installed OS build, and actual graphics API/driver support still need on-device confirmation. See [device profile](VIVO-Y29-DEVICE-PROFILE.md).
 
 ### Provisional Y29 graphics target (not yet benchmarked)
 
