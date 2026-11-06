@@ -113,9 +113,9 @@ A phase is complete only when:
 - [x] Define provisional graphics targets: 30 FPS, 720p output, dynamic 0.70–0.90 render scale, baked lighting, limited shadows, LOD, and streamed world cells.
 - [x] Confirm physical RAM: 6 GB (owner-confirmed; Extended RAM excluded).
 - [ ] Confirm exact model code, storage variant, installed Android build, and actual Vulkan/OpenGL driver capabilities.
-- [ ] Create a separate HACKER PROTOCOL game repository (GitHub integration cannot create a new repository in this session; create it in GitHub first).
-- [ ] Create the separate HACKER PROTOCOL game repository.
-- [ ] Create/import the first Godot Android vertical-slice project (third-person capsule placeholder, camera, touch movement, and test ground).
+- [ ] Create the separate HACKER PROTOCOL game repository in GitHub.
+- [x] Prepare the initial Godot Android vertical-slice starter package (third-person capsule placeholder, camera, touch controls, and test ground); awaiting import into the separate game repository.
+- [ ] Import the starter package into the separate HACKER PROTOCOL game repository.
 - [ ] Build and install Mobile and Compatibility renderer test APKs on the target device.
 - [ ] Validate touch input, one test environment, one rigged human character, sustained frame rate, memory, thermals, and CI export.
 
