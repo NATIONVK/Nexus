@@ -2,34 +2,40 @@
 
 **Your Personal Intelligence. Your Digital Universe.**
 
-NEXUS AI is a long-term, advanced personal-intelligence platform for Android and Web. The project is designed to grow through small, reviewable, tested milestones rather than one unverified code dump.
+NEXUS AI is the intelligence layer of a much larger long-term project: **NEXUS × HACKER PROTOCOL**, an expandable AI-powered 3D universe.
 
-## Product vision
+## Combined universe vision
 
-- Bilingual Bangla + English AI assistant
-- Modular AI provider layer (Gemini and OpenAI first)
-- Persistent conversations and user-controlled neural memory
-- Autonomous task planning and specialized agents
-- Voice interaction
-- Coding and GitHub intelligence
-- Browser automation with explicit approval for consequential actions
-- Cinematic, accessible, responsive interface
-- Android application and web companion
+- **NEXUS AI:** conversational intelligence, memory, voice, agents, personality, and an embodied AI avatar.
+- **HACKER PROTOCOL: CYBER WORLD:** a large interactive 3D world with exploration, missions, hacker labs, lifelike characters, NPCs, and multiplayer ambitions.
+- **Shared universe:** common identity/session contracts, world state, character presence, and versioned integration APIs.
 
-## Repository status
+## Confirmed product decisions
 
-**Milestone 0 — Foundation bootstrap.** This repository is the canonical home for all NEXUS AI source code, documentation, tests, and release workflows.
+- **Primary platform: Android.**
+- PC and Web are possible secondary platforms.
+- Development is organized into **50 major phases**.
+- No fixed APK or total-world storage ceiling. Use the storage genuinely required for the intended content and quality.
+- High-detail 3D environments and lifelike full-body human characters are core goals.
+- Use streaming, downloadable content, LOD, caching, and device-quality profiles so large content does not overwhelm RAM, CPU, GPU, battery, or thermal limits.
+- The earlier 200–500 MB idea is superseded; it is not a maximum.
 
-The first implementation milestone is a working AI chat foundation. Later roadmap capabilities must not be presented as implemented until they are coded and tested.
+## This repository
 
-## Planned stack
+`NATIONVK/Nexus` is the canonical repository for NEXUS AI source code, services, tests, documentation, and NEXUS-side integration. HACKER PROTOCOL will use a separate game repository when initialized.
+
+The current codebase is an early foundation, not the completed 3D universe. The roadmap describes future work; features must not be described as implemented until coded and verified.
+
+## Current stack foundation
 
 - Frontend: React + Vite
 - Backend: Node.js + Express
-- Persistence: SQLite for the initial single-instance development setup
-- Mobile packaging: Capacitor for Android
-- Providers: server-side Gemini and OpenAI adapters
-- Quality: automated tests, build checks, security review, and GitHub Actions
+- Persistence: SQLite for initial local development
+- Android wrapper: Capacitor configuration
+- AI providers: server-side Gemini and OpenAI adapters
+- Quality: automated tests and GitHub Actions
+
+The 3D game engine and cross-repository runtime integration are Phase 1 technical-discovery decisions; do not assume they are already implemented.
 
 ## Local development
 
@@ -38,14 +44,12 @@ Requirements: Node.js 20+ and npm.
 ```bash
 npm install
 cp .env.example .env
-# Add at least one provider key to .env
+# Add a provider key to .env (server-side only)
 npm run dev
 ```
 
 Web app: http://localhost:5173  
 API health: http://localhost:8787/api/health
-
-Never put provider keys in frontend variables, Android assets, source control, screenshots, or logs. Use server-side environment secrets.
 
 ## Android packaging
 
@@ -58,13 +62,13 @@ Build/sign the generated Android project using Android Studio and an Android SDK
 
 ## Development principles
 
-1. Work only in this repository: `NATIONVK/Nexus`.
-2. Preserve working features and review the existing code before every update.
+1. Work in the canonical NEXUS repository for NEXUS-side features.
+2. Preserve working functionality and inspect current code before each update.
 3. Implement one coherent milestone at a time.
-4. Add tests and run them before declaring a milestone complete.
-5. Never claim a build, provider connection, deployment, or APK succeeded without verified evidence.
-6. Keep secrets out of Git.
-7. Require user confirmation before consequential external or destructive agent actions.
+4. Test and build before declaring a milestone complete.
+5. Never claim an APK, workflow, provider, or deployment succeeded without verification.
+6. Keep secrets out of Git and client-side bundles.
+7. Require approval for consequential external or destructive agent actions.
 8. Document limitations and known issues honestly.
 
-See [the roadmap](docs/ROADMAP.md), [architecture](docs/ARCHITECTURE.md), and [security model](docs/SECURITY.md).
+See [the 50-phase roadmap](docs/ROADMAP.md), [architecture](docs/ARCHITECTURE.md), and [security model](docs/SECURITY.md).
